@@ -1,23 +1,43 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Node modules
+/node_modules/
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# Build directory
+/build/
 
-# testing
-/coverage
+# Log files
+*.log
 
-# production
-/build
+# Environment variables
+.env
 
-# misc
+# IDE/editor directories and files
+/.idea/
+/.vscode/
+/*.sublime-workspace
+/.history/
+
+# OS generated files
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+Thumbs.db
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# npm package lock file
+package-lock.json
+
+# Yarn package lock file (if using Yarn)
+yarn.lock
+
+# Coverage directory for Jest or other testing frameworks
+/coverage/
+
+# Temporary files created by tools like Webpack, Babel, etc.
+/dist/
+/tmp/
+
+# React Native macOS build folder
+.macos/
+
+# Optional: If you're using `create-react-app` (CRA), exclude the following:
+# .env.local (local environment variables)
+# .env.development
+# .env.production
+

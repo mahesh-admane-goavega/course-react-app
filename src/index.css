@@ -11,3 +11,157 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.hero-section {
+  background: url("https://via.placeholder.com/1500x500") no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.hero-section .btn-primary {
+  font-size: 1.25rem;
+  padding: 15px 30px;
+  text-transform: uppercase;
+}
+
+
+/* AddCourse.css */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Centering the form both horizontally and vertically using Flexbox */
+.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Creating the square form container */
+.form-container {
+  width: 400px;  /* Fixed width for the form */
+  height: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  /* Light shadow to give the card effect */
+  border: 1px solid #ddd;
+}
+
+/* Title styles */
+.form-container h2 {
+  color: #007bff;  /* Facebook-like blue color */
+  font-size: 1.8rem;
+}
+
+/* Styling for the form inputs and button */
+.form-container .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-container .btn-primary {
+  font-size: 1.1rem;
+}
+
+/* Course.css */
+.course-card {
+  margin-bottom: 20px;  /* Spacing between cards */
+}
+
+.course-card-body {
+  border: 1px solid #ddd;  /* Light border */
+  border-radius: 10px;  /* Rounded corners */
+  background-color: #f9f9f9;  /* Light background color */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+  transition: box-shadow 0.3s ease;  /* Smooth transition for hover effect */
+}
+
+.course-card-body:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);  /* Hover effect */
+}
+
+.course-title {
+  font-weight: bold;
+  font-size: 24px;
+  color: #007bff;  /* Blue color for the title */
+  margin-bottom: 10px;
+}
+
+.course-description {
+  font-size: 16px;
+  color: #555;  /* Slightly lighter text for the description */
+  margin-bottom: 20px;
+}
+
+.course-buttons {
+  display: flex;
+  justify-content: space-between;  /* Distribute the buttons evenly */
+}
+
+.course-buttons .btn {
+  width: 45%;  /* Buttons take up equal space */
+}
+
+/* For smaller cards and images */
+.team-card {
+  /* Set a fixed height for cards */
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.team-img {
+  height: 250px;  /* Make the images larger */
+  object-fit: cover;  /* Ensures images maintain aspect ratio */
+}
+
+.small-card {
+  max-width: 250px;  /* Reduces the card width */
+  margin: 0 auto; /* Center the smaller cards */
+}
+
+.small-img {
+  height: 150px;  /* Makes the image smaller */
+  object-fit: cover;  /* Ensures the image is cropped properly */
+}
+
+/* ContactUs.css */
+.contact-form {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #007bff;
+  font-weight: bold;
+}
+
+button {
+  font-size: 1.1rem;
+  padding: 0.75rem;
+}
+
+input, textarea {
+  font-size: 1rem;
+  padding: 0.75rem;
+}
