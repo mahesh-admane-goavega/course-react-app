@@ -165,3 +165,42 @@ input, textarea {
   font-size: 1rem;
   padding: 0.75rem;
 }
+
+
+/* Not Found */
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.error-content {
+  text-align: center;
+}
+
+.error-content h1 {
+  font-size: 6rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.error-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.lottie-animation {
+  max-width: 400px;
+  margin-bottom: 2rem;
+}
+
+/* CSS file (e.g., styles.css or your component-specific CSS) */
+.lottie-animation .small-animation {
+  width: 350px; /* Adjust the width */
+  height: 350px; /* Adjust the height */
+  margin: 0 auto; /* Optional: center the animation */
+}

@@ -9,7 +9,6 @@ const Hero = () => {
      },[]);
     return (
         <div className=" HeroSection d-flex justify-content-center align-items-start vh-100" >
-
             <Container>
                 <Row>
                     <Col>
