@@ -3,9 +3,15 @@ import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import base_url from "../src/bootapi";
+import Cookies from "js-cookie";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const AddCourse = () => {
+
+  const getCookie = (name) => {
+    return Cookies.get(name); // Returns the value of the cookie
+  };
 
   useEffect(() => {
     document.title = "Add Course";
@@ -19,8 +25,8 @@ const AddCourse = () => {
   // form handler function
   const handleForm = (e) => {
     e.preventDefault();
-    console.log(course); 
-    postDataToServer(course); 
+    console.log(course);
+    postDataToServer(course);
 
     // After submission, reset the course state
     setCourse({ title: '', description: '' });
@@ -28,7 +34,12 @@ const AddCourse = () => {
 
   // function to post data on server
   const postDataToServer = (data) => {
-    axios.post(`${base_url}/courses`, data).then(
+    const token = getCookie("jwtToken");
+    axios.post(`${base_url}/courses`, data, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    }).then(
       (response) => {
         console.log(response);
         console.log("Success");
@@ -36,7 +47,7 @@ const AddCourse = () => {
           position: "bottom-center"
         });
         // Reset course state after success
-        setCourse({ title: "", description: "" }); 
+        setCourse({ title: "", description: "" });
       },
       (error) => {
         console.log(error);
@@ -47,6 +58,28 @@ const AddCourse = () => {
       }
     );
   };
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    checkAuthentication();
+  }, [])
+
+  const checkAuthentication = () => {
+    const token = getCookie("jwtToken");
+    axios.get(`${base_url}/is_authenticated`, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    }).then((response) => {
+      if (response.data === true) {
+      }
+    })
+      .catch((error) => {
+        console.log("Errorr: ", error);
+        navigate("/auth/login")
+      })
+  }
 
   return (
     <div className="mt-5 d-flex justify-content-center align-items-start vh-100">
@@ -61,7 +94,7 @@ const AddCourse = () => {
               name="title"
               placeholder="Enter the course title"
               className="mb-3"
-              value={course.title} 
+              value={course.title}
               onChange={(e) => {
                 setCourse({ ...course, title: e.target.value });
               }}

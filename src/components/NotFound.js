@@ -1,7 +1,6 @@
 import React from "react";
 import lottie from "lottie-web";
 import { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 
 const NotFound = () => {
 

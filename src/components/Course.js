@@ -4,15 +4,24 @@ import UpdateCourse from "./UpdateCourse";
 import axios from "axios";
 import base_url from "../src/bootapi";
 import { toast } from "react-toastify";
-
+import Cookies from "js-cookie";
 
 const Course = ({ course, update, courseUpdate }) => {
 
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal)
 
+    const getCookie = (name) => {
+        return Cookies.get(name); // Returns the value of the cookie
+      };
+
     const deleteCourse = (id) => {
-        axios.delete(`${base_url}/courses/${id}`).then(
+        const token = getCookie("jwtToken");
+        axios.delete(`${base_url}/courses/${id}`,{
+            headers: {
+                'Authorization': `Bearer ${token}`
+              }
+        }).then(
             (response) => {
                 toast.success("Successfully deleted course!",{
                     position: "bottom-center"

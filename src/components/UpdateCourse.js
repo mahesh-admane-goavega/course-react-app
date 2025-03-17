@@ -1,9 +1,10 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalFooter } from 'reactstrap';
 import { Form, FormGroup, Input, Label } from "reactstrap";
 import base_url from '../src/bootapi';
 import { toast } from 'react-toastify';
+import Cookies from "js-cookie";
 
 function UpdateCourse({ toggle, modal, course, updateCourse }) {
   // Create local state for course
@@ -39,9 +40,18 @@ function UpdateCourse({ toggle, modal, course, updateCourse }) {
     toggle(); 
   };
 
+  const getCookie = (name) => {
+    return Cookies.get(name); // Returns the value of the cookie
+  };
+
   const updateOnServer = (updatedCourse) =>{
+    const token = getCookie("jwtToken");
     console.log("recived course", updateCourse)
-    axios.put(`${base_url}/courses`, updatedCourse).then(
+    axios.put(`${base_url}/courses`, updatedCourse, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    }).then(
       (response) => {
           console.log(response);
           console.log("Success")

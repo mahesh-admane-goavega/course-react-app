@@ -1,11 +1,13 @@
 import { React, useEffect} from "react";
 import { Container, Row, Col, Card, CardBody, CardTitle, CardText } from 'reactstrap';
+import { useReducer } from "react";
 
 const AboutUs = () => {
 
     useEffect(() => {
         document.title = "About Us"
     },[]);
+    
 
     return (
         <div className="d-flex justify-content-center align-items-start vh-100">
